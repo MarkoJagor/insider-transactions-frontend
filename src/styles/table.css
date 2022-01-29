@@ -1,0 +1,10 @@
+.p-datatable-thead {
+    top: 0;
+    position: sticky;
+    overflow: auto;
+}
+
+.p-paginator {
+    bottom: 0;
+    position: sticky;
+}
