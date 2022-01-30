@@ -7,6 +7,10 @@ class TransactionService {
     getTransactions() {
         return axios.get(TRANSACTIONS_API_BASE_URL);
     }
+
+    getTransactionById(transactionId) {
+        return axios.get(TRANSACTIONS_API_BASE_URL + '/' + transactionId)
+    }
 }
 
 export default new TransactionService();

@@ -1,4 +1,5 @@
 import { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import DataContext from '../context/DataContext';
 import '../styles/table.css'
 import { format } from 'date-fns';
@@ -80,8 +81,13 @@ const TransactionsTableComponent = () => {
                 <Column field='instrument' header='Finantsinstrument' body={(rowData, field) => sliceColumnBody(rowData, field)}></Column>
                 <Column field='transactionType' header='Tehingu liik' body={(rowData, field) => sliceColumnBody(rowData, field)}></Column>
                 <Column field='market' header='Tehingu koht' body={(rowData, field) => sliceColumnBody(rowData, field)}></Column>
-                <Column style={{ flex: '0 0 5rem' }} body={<Button icon='pi pi-info' className='p-button-info p-button-rounded' />}></Column>
-            </DataTable>
+                <Column field='transactionId' style={{ flex: '0 0 5rem' }} body={(rowData) =>
+                    <Link to={`/transaction/${rowData.transactionId}`} target='_blank' style={{ textDecoration: 'none' }}>
+                        <Button icon='pi pi-info' className='p-button-info p-button-rounded' />
+                    </Link>
+                }>
+                </Column >
+            </DataTable >
         </>
     );
 };
