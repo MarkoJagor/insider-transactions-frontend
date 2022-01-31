@@ -60,15 +60,12 @@ const TransactionsTableComponent = () => {
     return (
         <>
             <DataTable
-                //style={{ height: '100%' }}
                 value={tableData}
                 paginator
                 rows={25}
                 rowsPerPageOptions={[10, 25, 50, 100]}
                 size='small'
                 stripedRows
-                // scrollable
-                //  scrollHeight='80vh'
                 header={tableHeader}
             >
 
