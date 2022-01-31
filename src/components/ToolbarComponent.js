@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import { Toolbar } from 'primereact/toolbar'
 import { Dropdown } from 'primereact/dropdown';
 import { Calendar } from 'primereact/calendar'
-import { Button } from 'primereact/button'
 import DataContext from '../context/DataContext';
+import CSVExportComponent from './CSVExportComponent';
 
 const ToolbarComponent = () => {
 
@@ -56,7 +56,7 @@ const ToolbarComponent = () => {
 
     const toolbarRightContents = (
         <div>
-            <Button label='CSV' className='p-button-success p-button-raised' icon='pi pi-file' />
+            <CSVExportComponent />
         </div>
 
     )
