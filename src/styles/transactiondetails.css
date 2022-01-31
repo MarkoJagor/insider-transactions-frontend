@@ -1,0 +1,30 @@
+main {
+    background-color: aliceblue;
+    width: 100%;
+}
+
+h1 {
+    margin-left: 50px;
+}
+
+.bordered-box {
+    border: solid grey;
+    border-radius: 30px;
+    box-shadow: 20px 20px 20px grey;
+    margin-left: 50px;
+    width: 60%;
+}
+
+.box-content {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.p-divider .p-divider-content {
+    background-color: aliceblue;
+}
+
+.p-divider.p-divider-horizontal:before {
+    border-top: 2px #dee2e6;
+    border-top-style: solid;
+}
