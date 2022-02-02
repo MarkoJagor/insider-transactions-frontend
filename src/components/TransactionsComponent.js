@@ -1,16 +1,34 @@
-import React from 'react';
+import { useContext } from 'react';
+import DataContext from '../context/DataContext';
 import ToolbarComponent from './ToolbarComponent';
 import TransactionsTableComponent from './TransactionsTableComponent';
+import '../styles/layout.css'
+import DataNotFoundComponent from './DataNotFoundComponent';
 
 const TransactionsComponent = () => {
+    const { fetchError, isLoading } = useContext(DataContext)
+
     return (
-        <main style={{ width: '100%' }}  >
+        <main style={{ width: '100%', position: 'relative' }}  >
 
-            <ToolbarComponent />
+            {isLoading &&
+                <div className='loadingScreen'>
+                    <i className='pi pi-spin pi-spinner icon'></i>
+                    <p>Laen andmeid...</p>
+                </div>
+            }
 
+            {
+                fetchError && <DataNotFoundComponent />
+            }
 
-            <TransactionsTableComponent />
-
+            {
+                !fetchError && !isLoading &&
+                <>
+                    <ToolbarComponent />
+                    <TransactionsTableComponent />
+                </>
+            }
         </main>
     );
 };

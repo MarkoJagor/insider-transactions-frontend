@@ -4,6 +4,7 @@ import { DataProvider } from './context/DataContext';
 import SideNavComponent from './components/SideNavComponent';
 import TransactionsComponent from './components/TransactionsComponent';
 import TransactionDetailsComponent from './components/TransactionDetailsComponent';
+import PageNotFoundComponent from './components/PageNotFoundComponent';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<TransactionsComponent />} />
           <Route path='/transaction/:transactionId' element={<TransactionDetailsComponent />} />
+          <Route path='*' element={<PageNotFoundComponent />} />
         </Routes>
       </div>
     </DataProvider>
