@@ -21,10 +21,10 @@ const TransactionDetailsComponent = () => {
     }
 
     return (
-        <main>
-            <h1>Börsiemitendiga seotud isiku tehingu detailid</h1>
-            <div className='bordered-box'>
-                <div className='box-content'>
+        <main className='detailsContent'>
+            <h1 className='detailsHeader'>Börsiemitendiga seotud isiku tehingu detailid</h1>
+            <div className='borderedBox'>
+                <div className='boxContent'>
                     <Divider align='left'>
                         <h3>Emitent</h3>
                     </Divider>

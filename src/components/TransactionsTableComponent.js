@@ -67,6 +67,7 @@ const TransactionsTableComponent = () => {
                 size='small'
                 stripedRows
                 header={tableHeader}
+                emptyMessage='Tehinguid ei leitud.'
             >
 
                 <Column field='tradeDate' header='Tehingu kuupäev' sortable></Column>

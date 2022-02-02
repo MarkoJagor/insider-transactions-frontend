@@ -1,13 +1,13 @@
-main {
+.detailsContent {
     background-color: aliceblue;
     width: 100%;
 }
 
-h1 {
+.detailsHeader {
     margin-left: 50px;
 }
 
-.bordered-box {
+.borderedBox {
     border: solid grey;
     border-radius: 30px;
     box-shadow: 20px 20px 20px grey;
@@ -15,7 +15,7 @@ h1 {
     width: 60%;
 }
 
-.box-content {
+.boxContent {
     padding-left: 30px;
     padding-right: 30px;
 }
