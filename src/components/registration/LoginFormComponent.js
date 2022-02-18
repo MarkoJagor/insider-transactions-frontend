@@ -35,12 +35,9 @@ const LoginFormComponent = () => {
 
             setUsername(response.data.username)
             setUserId(response.data.id)
-            setUserId(1)
 
             navigate("/")
             Messages.loginSuccessful(toast)
-
-            // console.log(response.data)
         } catch (error) {
             if (error.response) {
                 toast.current.clear();
