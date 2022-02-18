@@ -17,14 +17,14 @@ const SideNavComponent = () => {
             setUsername(currentUser.username)
             setUserId(currentUser.id)
         }
-    }, [])
+    }, [setUserId, setUsername])
 
-    const logout = async () => {
+    const logout = () => {
         setUsername('');
         setUserId('');
         AccountService.logout();
-        navigate("/login");
         setWasLoggedOut(true)
+        navigate("/login")
     }
 
     return (
