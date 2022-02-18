@@ -7,11 +7,14 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AccountProvider } from './context/AccountContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <AccountProvider>
+        <App />
+      </AccountProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
