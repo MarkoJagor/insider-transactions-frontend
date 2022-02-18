@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Formik } from 'formik';
 import { Button } from 'primereact/button'
@@ -14,6 +14,14 @@ const RegistrationFormComponent = () => {
 
     const { setUsername, toast } = useContext(AccountContext)
     const navigate = useNavigate()
+
+    useEffect(() => {
+        const currentUser = AccountService.getCurrentUser()
+        if (currentUser) {
+            navigate("/")
+        }
+    }, [])
+
 
     const register = async (values, actions) => {
         try {

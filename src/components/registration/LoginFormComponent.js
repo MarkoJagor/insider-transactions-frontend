@@ -15,6 +15,13 @@ const LoginFormComponent = () => {
     const { username, setUsername, setUserId, toast, wasLoggedOut, setWasLoggedOut } = useContext(AccountContext)
 
     useEffect(() => {
+        const currentUser = AccountService.getCurrentUser()
+
+        if (currentUser) {
+            navigate("/");
+            return;
+        }
+
         if (wasLoggedOut) {
             Messages.logoutSuccesful(toast)
             setWasLoggedOut(false)
