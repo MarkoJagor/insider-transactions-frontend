@@ -2,11 +2,14 @@ import { useContext } from 'react';
 import { Toolbar } from 'primereact/toolbar'
 import { Dropdown } from 'primereact/dropdown';
 import { Calendar } from 'primereact/calendar'
+import { Toast } from 'primereact/toast';
 import DataContext from '../context/DataContext';
 import CSVExportComponent from './CSVExportComponent';
+import AccountContext from '../context/AccountContext';
 
 const ToolbarComponent = () => {
 
+    const { toast } = useContext(AccountContext)
     const { issuerDropdownOptions, issuerValue, setIssuerValue, fromDate, setFromDate, toDate, setToDate } = useContext(DataContext)
 
     const toolbarLeftContets = (
@@ -63,6 +66,7 @@ const ToolbarComponent = () => {
 
     return (
         <>
+            <Toast ref={toast} />
             <Toolbar left={toolbarLeftContets} right={toolbarRightContents} style={{ alignItems: 'flex-end' }} />
         </>
     );

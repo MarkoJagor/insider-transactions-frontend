@@ -1,0 +1,62 @@
+.registrationForm {
+    width: 100%;
+    background-color: aliceblue;
+}
+
+.registrationForm .card {
+    min-width: 450px;
+    background: var(--surface-e);
+    padding: 2rem;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    border-radius: 4px;
+    margin-bottom: 2rem;
+}
+
+.registrationForm .formContent {
+    display: flex;
+    justify-content: center;
+}
+
+.registrationForm h5 {
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 1.5rem 0 1rem;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1.2;
+    color: inherit;
+}
+
+.registrationForm p {
+    text-align: center;
+}
+
+.registrationForm .card form {
+    margin-top: 2rem;
+}
+
+.field {
+    margin-bottom: 2rem;
+}
+
+.registrationForm .p-inputtext {
+    width: 100%;
+}
+
+.registrationForm .p-password {
+    width: 100%;
+}
+
+.registrationForm .p-button {
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.registrationForm .p-error {
+    color: #e24c4c;
+}
+
+.registrationForm .p-invalid {
+    border-color: #e24c4c;
+}
