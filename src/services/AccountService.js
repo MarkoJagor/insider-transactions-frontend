@@ -1,15 +1,15 @@
 import axios from "axios";
 
-const ACCOUNTS_API_BASE_URL = 'http://localhost:8080/api/v1/account';
+const ACCOUNTS_API_BASE_URL = 'http://localhost:8080/api/v1/account/';
 
 class AccountService {
 
     signup(account) {
-        return axios.post(ACCOUNTS_API_BASE_URL + "/signup", account);
+        return axios.post(ACCOUNTS_API_BASE_URL + "signup", account);
     }
 
     signin(account) {
-        return axios.post(ACCOUNTS_API_BASE_URL + "/signin", account);
+        return axios.post(ACCOUNTS_API_BASE_URL + "signin", account);
     }
 
     logout() {
