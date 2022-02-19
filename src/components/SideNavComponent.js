@@ -46,7 +46,7 @@ const SideNavComponent = () => {
                         </MenuItem>
                         {
                             userId && <MenuItem icon={<i className='pi pi-eye'></i>}>
-                                <Link to="/">Jälgimisnimekiri</Link>
+                                <Link to="/watchlist">Jälgimisnimekiri</Link>
                             </MenuItem>
                         }
                         <MenuItem icon={<i className='pi pi-sign-in'></i>}>

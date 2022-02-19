@@ -7,6 +7,7 @@ import TransactionDetailsComponent from './components/TransactionDetailsComponen
 import PageNotFoundComponent from './components/PageNotFoundComponent';
 import RegistrationFormComponent from './components/registration/RegistrationFormComponent';
 import LoginFormComponent from './components/registration/LoginFormComponent';
+import WatchlistComponent from './components/WatchlistComponent';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<TransactionsComponent />} />
           <Route path='/transaction/:transactionId' element={<TransactionDetailsComponent />} />
+          <Route path='/watchlist' element={<WatchlistComponent />} />
           <Route path='/login' element={<LoginFormComponent />} />
           <Route path='/register' element={<RegistrationFormComponent />} />
           <Route path='*' element={<PageNotFoundComponent />} />
