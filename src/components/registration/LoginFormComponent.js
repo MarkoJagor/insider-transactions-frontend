@@ -8,7 +8,7 @@ import '../../styles/registrationform.css';
 import TextFieldComponent from './TextFieldComponent';
 import AccountContext from '../../context/AccountContext';
 import AccountService from '../../services/AccountService';
-import Messages from './Messages';
+import Messages from '../Messages';
 
 const LoginFormComponent = () => {
     const navigate = useNavigate()

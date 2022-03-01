@@ -26,6 +26,14 @@ class Messages {
     logoutSuccesful = (toast) => {
         toast.current.show({ severity: 'success', summary: 'Olete välja logitud!', life: 3000 })
     }
+
+    saveWatchlistSuccesful = (toast) => {
+        toast.current.show({ severity: 'success', summary: 'Jälgimisnimekirja salvestamine õnnestus!', life: 3000 })
+    }
+
+    saveWatchlistError = (toast) => {
+        toast.current.show({ severity: 'error', summary: 'Jälgimisnimekirja salvestamisel tekkis viga!', detail: 'Palun proovige hiljem uuesti.', sticky: true })
+    }
 }
 
 export default new Messages();

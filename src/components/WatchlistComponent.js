@@ -1,24 +1,27 @@
 import { useContext, useEffect, useState } from 'react'
 import { PickList } from 'primereact/picklist'
+import { Button } from 'primereact/button'
+import { Toast } from 'primereact/toast'
 import AccountContext from '../context/AccountContext';
 import WatchlistService from '../services/WatchlistService';
+import AccountService from '../services/AccountService';
+import Messages from './Messages';
 
 const WatchlistComponent = () => {
-    const { userId } = useContext(AccountContext)
+    const { toast } = useContext(AccountContext)
     const [source, setSource] = useState([])
     const [target, setTarget] = useState([])
 
     useEffect(() => {
         const loadWatchlist = async () => {
             try {
+                const currentUser = AccountService.getCurrentUser();
+
                 const availableIssuers = await WatchlistService.getActiveIssuers();
-                const accountWatchlist = await WatchlistService.getAccountIssuers(userId);
+                const accountWatchlist = await WatchlistService.getAccountIssuers(currentUser.id);
 
                 removeWatchlistIssuersFromSource(availableIssuers.data, accountWatchlist.data)
                 setTarget(accountWatchlist.data)
-
-                //console.log(availableIssuers.data)
-                //console.log(accountWatchlist.data)
             } catch (error) {
                 console.log(error)
             }
@@ -28,14 +31,28 @@ const WatchlistComponent = () => {
     }, [])
 
     const removeWatchlistIssuersFromSource = (availableIssuers, accountWatchlist) => {
-        availableIssuers = availableIssuers.filter((issuer) => {
-            return !accountWatchlist.has(issuer)
-        }
-        )
-        console.log(availableIssuers)
-        setSource(availableIssuers)
+        const availableIssuersWithoutWatchlist = availableIssuers.filter(item => !accountWatchlist.find(({ issuerId }) => item.issuerId === issuerId))
+        setSource(availableIssuersWithoutWatchlist)
     }
 
+    const onChange = (event) => {
+        setSource(event.source);
+        setTarget(event.target);
+    }
+
+    const saveWatchlist = async () => {
+        try {
+            const currentUser = AccountService.getCurrentUser();
+
+            await WatchlistService.updateAccountIssuers(currentUser.id, target)
+            toast.current.clear();
+            Messages.saveWatchlistSuccesful(toast)
+        } catch (error) {
+            console.log(error)
+            toast.current.clear();
+            Messages.saveWatchlistError(toast)
+        }
+    }
 
     const itemTemplate = (item) => {
         return (
@@ -46,13 +63,24 @@ const WatchlistComponent = () => {
     }
 
     return (
-        <PickList source={source}
-            target={target}
-            itemTemplate={itemTemplate}
-            sourceHeader={"Saadaval olevad ettevõtted"}
-            targetHeader={"Jälgimisnimerkirjas olevad ettevõtted"}
-            showSourceControls={false}
-            showTargetControls={false} />
+        <div>
+            <div>
+                <Toast ref={toast} />
+                <PickList source={source}
+                    target={target}
+                    itemTemplate={itemTemplate}
+                    sourceHeader={"Saadaval olevad ettevõtted"}
+                    targetHeader={"Jälgimisnimerkirjas olevad ettevõtted"}
+                    showSourceControls={false}
+                    showTargetControls={false}
+                    sourceStyle={{ height: '342px' }}
+                    targetStyle={{ height: '342px' }}
+                    onChange={onChange} />
+            </div>
+            <div>
+                <Button label={'Salvesta'} onClick={saveWatchlist} className="p-button-rounded" />
+            </div>
+        </div>
     );
 }
 

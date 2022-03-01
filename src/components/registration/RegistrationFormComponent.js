@@ -8,7 +8,7 @@ import * as Yup from 'yup';
 import TextFieldComponent from './TextFieldComponent';
 import AccountService from '../../services/AccountService';
 import AccountContext from '../../context/AccountContext';
-import Messages from './Messages';
+import Messages from '../Messages';
 
 const RegistrationFormComponent = () => {
 
