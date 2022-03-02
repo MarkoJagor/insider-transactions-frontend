@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import DataContext from '../context/DataContext';
-import ToolbarComponent from './ToolbarComponent';
-import TransactionsTableComponent from './TransactionsTableComponent';
-import DataNotFound from './util/DataNotFound';
-import Loading from './util/Loading';
+import DataContext from '../../context/DataContext';
+import Toolbar from './Toolbar';
+import TransactionsTableComponent from './TransactionsTable';
+import DataNotFound from '../util/DataNotFound';
+import Loading from '../util/Loading';
 
 const TransactionsComponent = () => {
     const { fetchError, isLoading } = useContext(DataContext)
@@ -22,7 +22,7 @@ const TransactionsComponent = () => {
             {
                 !fetchError && !isLoading &&
                 <>
-                    <ToolbarComponent />
+                    <Toolbar />
                     <TransactionsTableComponent />
                 </>
             }

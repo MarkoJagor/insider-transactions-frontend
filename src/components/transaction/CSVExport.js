@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { CSVLink } from 'react-csv';
-import DataContext from '../context/DataContext';
+import DataContext from '../../context/DataContext';
 import { Button } from 'primereact/button'
 
 const CSVExportComponent = () => {

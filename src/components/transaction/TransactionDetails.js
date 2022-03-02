@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Divider } from 'primereact/divider'
-import TransactionService from '../services/TransactionService';
-import '../styles/transactiondetails.css'
-import DataNotFound from './util/DataNotFound';
-import Loading from './util/Loading';
+import TransactionService from '../../services/TransactionService';
+import '../../styles/transactiondetails.css'
+import DataNotFound from '../util/DataNotFound';
+import Loading from '../util/Loading';
 
 const TransactionDetailsComponent = () => {
     const { transactionId } = useParams()

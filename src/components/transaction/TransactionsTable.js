@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import DataContext from '../context/DataContext';
-import '../styles/table.css'
+import DataContext from '../../context/DataContext';
+import '../../styles/table.css'
 import { format } from 'date-fns';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';

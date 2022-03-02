@@ -3,9 +3,9 @@ import { Toolbar } from 'primereact/toolbar'
 import { Dropdown } from 'primereact/dropdown';
 import { Calendar } from 'primereact/calendar'
 import { Toast } from 'primereact/toast';
-import DataContext from '../context/DataContext';
-import CSVExportComponent from './CSVExportComponent';
-import AccountContext from '../context/AccountContext';
+import DataContext from '../../context/DataContext';
+import CSVExport from './CSVExport';
+import AccountContext from '../../context/AccountContext';
 
 const ToolbarComponent = () => {
 
@@ -59,7 +59,7 @@ const ToolbarComponent = () => {
 
     const toolbarRightContents = (
         <div>
-            <CSVExportComponent />
+            <CSVExport />
         </div>
 
     )

@@ -2,8 +2,8 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom'
 import { DataProvider } from './context/DataContext';
 import SideNav from './components/util/SideNav';
-import TransactionsComponent from './components/TransactionsComponent';
-import TransactionDetailsComponent from './components/TransactionDetailsComponent';
+import TransactionsComponent from './components/transaction/Transactions';
+import TransactionDetailsComponent from './components/transaction/TransactionDetails';
 import PageNotFound from './components/util/PageNotFound';
 import RegistrationForm from './components/account/RegistrationForm';
 import LoginForm from './components/account/LoginForm';
