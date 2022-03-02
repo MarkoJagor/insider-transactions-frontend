@@ -5,8 +5,8 @@ import SideNavComponent from './components/SideNavComponent';
 import TransactionsComponent from './components/TransactionsComponent';
 import TransactionDetailsComponent from './components/TransactionDetailsComponent';
 import PageNotFoundComponent from './components/PageNotFoundComponent';
-import RegistrationFormComponent from './components/registration/RegistrationFormComponent';
-import LoginFormComponent from './components/registration/LoginFormComponent';
+import RegistrationForm from './components/account/RegistrationForm';
+import LoginForm from './components/account/LoginForm';
 import WatchlistComponent from './components/WatchlistComponent';
 
 function App() {
@@ -18,8 +18,8 @@ function App() {
           <Route path='/' element={<TransactionsComponent />} />
           <Route path='/transaction/:transactionId' element={<TransactionDetailsComponent />} />
           <Route path='/watchlist' element={<WatchlistComponent />} />
-          <Route path='/login' element={<LoginFormComponent />} />
-          <Route path='/register' element={<RegistrationFormComponent />} />
+          <Route path='/login' element={<LoginForm />} />
+          <Route path='/register' element={<RegistrationForm />} />
           <Route path='*' element={<PageNotFoundComponent />} />
         </Routes>
       </div>

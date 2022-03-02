@@ -5,7 +5,7 @@ import { Button } from 'primereact/button'
 import { Toast } from 'primereact/toast'
 import '../../styles/registrationform.css';
 import * as Yup from 'yup';
-import TextFieldComponent from './TextFieldComponent';
+import TextField from './TextField';
 import AccountService from '../../services/AccountService';
 import AccountContext from '../../context/AccountContext';
 import Messages from '../util/Messages';
@@ -86,9 +86,9 @@ const RegistrationFormComponent = () => {
                         }}
                     >
                         <Form>
-                            <TextFieldComponent label='Email' name='email' type='text' />
-                            <TextFieldComponent label='Parool' name='password' type='password' />
-                            <TextFieldComponent label='Korda parooli' name='confirmPassword' type='password' />
+                            <TextField label='Email' name='email' type='text' />
+                            <TextField label='Parool' name='password' type='password' />
+                            <TextField label='Korda parooli' name='confirmPassword' type='password' />
                             <Button type='submit' label='Registreeri' />
                         </Form>
                     </Formik>

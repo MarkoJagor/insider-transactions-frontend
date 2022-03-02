@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import { Button } from 'primereact/button'
 import { Toast } from 'primereact/toast'
 import '../../styles/registrationform.css';
-import TextFieldComponent from './TextFieldComponent';
+import TextField from './TextField';
 import AccountContext from '../../context/AccountContext';
 import AccountService from '../../services/AccountService';
 import Messages from '../util/Messages';
@@ -86,8 +86,8 @@ const LoginFormComponent = () => {
                         }}
                     >
                         <Form>
-                            <TextFieldComponent label='Email' name='email' type='text' />
-                            <TextFieldComponent label='Parool' name='password' type='password' />
+                            <TextField label='Email' name='email' type='text' />
+                            <TextField label='Parool' name='password' type='password' />
                             <Button type='submit' label='Logi sisse' />
                             <p><Link to="/register">Uus kasutaja?</Link></p>
                         </Form>
