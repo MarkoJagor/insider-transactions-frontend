@@ -4,7 +4,7 @@ import { Divider } from 'primereact/divider'
 import TransactionService from '../services/TransactionService';
 import '../styles/transactiondetails.css'
 import DataNotFoundComponent from './DataNotFoundComponent';
-import Loading from './Loading';
+import Loading from './util/Loading';
 
 const TransactionDetailsComponent = () => {
     const { transactionId } = useParams()

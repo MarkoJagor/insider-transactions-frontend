@@ -5,7 +5,7 @@ import { Toast } from 'primereact/toast'
 import AccountContext from '../context/AccountContext';
 import WatchlistService from '../services/WatchlistService';
 import AccountService from '../services/AccountService';
-import Messages from './Messages';
+import Messages from './util/Messages';
 
 const WatchlistComponent = () => {
     const { toast } = useContext(AccountContext)

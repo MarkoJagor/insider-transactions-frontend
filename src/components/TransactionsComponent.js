@@ -3,7 +3,7 @@ import DataContext from '../context/DataContext';
 import ToolbarComponent from './ToolbarComponent';
 import TransactionsTableComponent from './TransactionsTableComponent';
 import DataNotFoundComponent from './DataNotFoundComponent';
-import Loading from './Loading';
+import Loading from './util/Loading';
 
 const TransactionsComponent = () => {
     const { fetchError, isLoading } = useContext(DataContext)
