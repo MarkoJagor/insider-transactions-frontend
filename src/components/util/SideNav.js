@@ -2,9 +2,9 @@ import { useContext, useEffect } from 'react';
 import { ProSidebar, Menu, MenuItem, SidebarFooter, SidebarHeader, SidebarContent } from 'react-pro-sidebar';
 import { Link, useNavigate } from 'react-router-dom';
 import 'react-pro-sidebar/dist/css/styles.css';
-import logo from '../images/fiLogo.png'
-import AccountContext from '../context/AccountContext';
-import AccountService from '../services/AccountService';
+import logo from '../../images/fiLogo.png'
+import AccountContext from '../../context/AccountContext';
+import AccountService from '../../services/AccountService';
 
 const SideNavComponent = () => {
     const today = new Date();
