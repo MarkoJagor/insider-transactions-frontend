@@ -7,7 +7,7 @@ import TransactionDetailsComponent from './components/transaction/TransactionDet
 import PageNotFound from './components/util/PageNotFound';
 import RegistrationForm from './components/account/RegistrationForm';
 import LoginForm from './components/account/LoginForm';
-import WatchlistComponent from './components/WatchlistComponent';
+import WatchlistComponent from './components/watchlist/Watchlist';
 
 function App() {
   return (

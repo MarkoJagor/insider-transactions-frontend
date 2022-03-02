@@ -1,14 +1,16 @@
 import { useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { PickList } from 'primereact/picklist'
 import { Button } from 'primereact/button'
 import { Toast } from 'primereact/toast'
-import AccountContext from '../context/AccountContext';
-import WatchlistService from '../services/WatchlistService';
-import AccountService from '../services/AccountService';
-import Messages from './util/Messages';
+import AccountContext from '../../context/AccountContext';
+import WatchlistService from '../../services/WatchlistService';
+import AccountService from '../../services/AccountService';
+import Messages from '../util/Messages';
 
 const WatchlistComponent = () => {
     const { toast } = useContext(AccountContext)
+    const navigate = useNavigate()
     const [source, setSource] = useState([])
     const [target, setTarget] = useState([])
 
@@ -16,6 +18,10 @@ const WatchlistComponent = () => {
         const loadWatchlist = async () => {
             try {
                 const currentUser = AccountService.getCurrentUser();
+
+                if (!currentUser) {
+                    navigate("/login")
+                }
 
                 const availableIssuers = await WatchlistService.getActiveIssuers();
                 const accountWatchlist = await WatchlistService.getAccountIssuers(currentUser.id);
