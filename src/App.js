@@ -4,7 +4,7 @@ import { DataProvider } from './context/DataContext';
 import SideNavComponent from './components/SideNavComponent';
 import TransactionsComponent from './components/TransactionsComponent';
 import TransactionDetailsComponent from './components/TransactionDetailsComponent';
-import PageNotFoundComponent from './components/PageNotFoundComponent';
+import PageNotFound from './components/util/PageNotFound';
 import RegistrationForm from './components/account/RegistrationForm';
 import LoginForm from './components/account/LoginForm';
 import WatchlistComponent from './components/WatchlistComponent';
@@ -20,7 +20,7 @@ function App() {
           <Route path='/watchlist' element={<WatchlistComponent />} />
           <Route path='/login' element={<LoginForm />} />
           <Route path='/register' element={<RegistrationForm />} />
-          <Route path='*' element={<PageNotFoundComponent />} />
+          <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>
     </DataProvider>

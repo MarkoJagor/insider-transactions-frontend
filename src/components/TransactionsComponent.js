@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import DataContext from '../context/DataContext';
 import ToolbarComponent from './ToolbarComponent';
 import TransactionsTableComponent from './TransactionsTableComponent';
-import DataNotFoundComponent from './DataNotFoundComponent';
+import DataNotFound from './util/DataNotFound';
 import Loading from './util/Loading';
 
 const TransactionsComponent = () => {
@@ -16,7 +16,7 @@ const TransactionsComponent = () => {
             }
 
             {
-                fetchError && <DataNotFoundComponent />
+                fetchError && <DataNotFound />
             }
 
             {

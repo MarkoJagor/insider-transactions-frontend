@@ -1,6 +1,6 @@
 import { Button } from 'primereact/button';
 import { Link } from 'react-router-dom';
-import '../styles/error.css'
+import '../../styles/error.css'
 
 const NotFoundComponent = () => {
     return (

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Divider } from 'primereact/divider'
 import TransactionService from '../services/TransactionService';
 import '../styles/transactiondetails.css'
-import DataNotFoundComponent from './DataNotFoundComponent';
+import DataNotFound from './util/DataNotFound';
 import Loading from './util/Loading';
 
 const TransactionDetailsComponent = () => {
@@ -51,7 +51,7 @@ const TransactionDetailsComponent = () => {
             }
 
             {
-                fetchError && <DataNotFoundComponent />
+                fetchError && <DataNotFound />
             }
 
             {
