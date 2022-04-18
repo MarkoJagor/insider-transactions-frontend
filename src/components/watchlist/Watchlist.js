@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { PickList } from 'primereact/picklist'
 import { Button } from 'primereact/button'
 import { Toast } from 'primereact/toast'
+import { Checkbox } from 'primereact/checkbox'
 import AccountContext from '../../context/AccountContext';
 import WatchlistService from '../../services/WatchlistService';
 import AccountService from '../../services/AccountService';
@@ -13,6 +14,7 @@ const WatchlistComponent = () => {
     const navigate = useNavigate()
     const [source, setSource] = useState([])
     const [target, setTarget] = useState([])
+    const [isAlpha, setIsAlpha] = useState(false)
 
     useEffect(() => {
         const loadWatchlist = async () => {
@@ -24,10 +26,11 @@ const WatchlistComponent = () => {
                 }
 
                 const availableIssuers = await WatchlistService.getActiveIssuers();
-                const accountWatchlist = await WatchlistService.getAccountIssuers(currentUser.id);
+                const accountWatchlist = await WatchlistService.getAccountWatchlist(currentUser.id)
 
-                removeWatchlistIssuersFromSource(availableIssuers.data, accountWatchlist.data)
-                setTarget(accountWatchlist.data)
+                removeWatchlistIssuersFromSource(availableIssuers.data, accountWatchlist.data.issuers)
+                setTarget(accountWatchlist.data.issuers)
+                setIsAlpha(accountWatchlist.data.alphaReturns)
             } catch (error) {
                 console.log(error)
             }
@@ -50,7 +53,7 @@ const WatchlistComponent = () => {
         try {
             const currentUser = AccountService.getCurrentUser();
 
-            await WatchlistService.updateAccountIssuers(currentUser.id, target)
+            await WatchlistService.updateAccountWatchlist(currentUser.id, { "issuers": target, "alphaReturns": isAlpha })
             toast.current.clear();
             Messages.saveWatchlistSuccesful(toast)
         } catch (error) {
@@ -82,6 +85,10 @@ const WatchlistComponent = () => {
                     sourceStyle={{ height: '342px' }}
                     targetStyle={{ height: '342px' }}
                     onChange={onChange} />
+            </div>
+            <div style={{ marginTop: "10px", marginBottom: "10px" }}>
+                <Checkbox inputId="alpha" checked={isAlpha} onChange={e => setIsAlpha(e.checked)} />
+                <label style={{ marginLeft: "5px", fontWeight: 500, fontFamily: "Inter" }} htmlFor="alpha">Soovin saada teavitusi potentsiaalsetest Tallinna börsi keskmist tootlust ületavatest tehingutest</label>
             </div>
             <div>
                 <Button label={'Salvesta'} onClick={saveWatchlist} className="p-button-rounded" />

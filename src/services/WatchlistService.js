@@ -10,13 +10,13 @@ class WatchlistService {
             { headers: AccountService.getAuthHeader() });
     }
 
-    getAccountIssuers(accountId) {
+    getAccountWatchlist(accountId) {
         return axios.get(WATCHLIST_API_BASE_URL + "account/" + accountId,
             { headers: AccountService.getAuthHeader() })
     }
 
-    updateAccountIssuers(accountId, issuersList) {
-        return axios.put(WATCHLIST_API_BASE_URL + "account/" + accountId, issuersList,
+    updateAccountWatchlist(accountId, watchlist) {
+        return axios.put(WATCHLIST_API_BASE_URL + "account/" + accountId, watchlist,
             { headers: AccountService.getAuthHeader() })
     }
 }
