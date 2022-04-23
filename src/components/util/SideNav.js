@@ -6,7 +6,7 @@ import logo from '../../images/fiLogo.png'
 import AccountContext from '../../context/AccountContext';
 import AccountService from '../../services/AccountService';
 
-const SideNavComponent = () => {
+const SideNav = () => {
     const today = new Date();
     const navigate = useNavigate()
     const { userId, setUsername, setUserId, setWasLoggedOut } = useContext(AccountContext)
@@ -69,4 +69,4 @@ const SideNavComponent = () => {
     );
 };
 
-export default SideNavComponent;
+export default SideNav;

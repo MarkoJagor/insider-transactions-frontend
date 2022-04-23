@@ -2,7 +2,7 @@ import { InputText } from 'primereact/inputtext';
 import { Password } from 'primereact/password'
 import { ErrorMessage, useField, useFormik } from 'formik';
 
-const TextFieldComponent = ({ label, ...props }) => {
+const TextField = ({ label, ...props }) => {
     const [field, meta] = useField(props);
     const isFormFieldValid = () => meta.touched && meta.error
 
@@ -35,4 +35,4 @@ const TextFieldComponent = ({ label, ...props }) => {
     );
 };
 
-export default TextFieldComponent;
+export default TextField;

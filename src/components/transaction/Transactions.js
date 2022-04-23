@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import DataContext from '../../context/DataContext';
 import Toolbar from './Toolbar';
-import TransactionsTableComponent from './TransactionsTable';
+import TransactionsTable from './TransactionsTable';
 import DataNotFound from '../util/DataNotFound';
 import Loading from '../util/Loading';
 
-const TransactionsComponent = () => {
+const Transactions = () => {
     const { fetchError, isLoading } = useContext(DataContext)
 
     return (
@@ -23,11 +23,11 @@ const TransactionsComponent = () => {
                 !fetchError && !isLoading &&
                 <>
                     <Toolbar />
-                    <TransactionsTableComponent />
+                    <TransactionsTable />
                 </>
             }
         </main>
     );
 };
 
-export default TransactionsComponent;
+export default Transactions;

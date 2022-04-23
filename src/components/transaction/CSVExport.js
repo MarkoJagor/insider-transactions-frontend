@@ -3,7 +3,7 @@ import { CSVLink } from 'react-csv';
 import DataContext from '../../context/DataContext';
 import { Button } from 'primereact/button'
 
-const CSVExportComponent = () => {
+const CSVExport = () => {
 
     const { tableData } = useContext(DataContext);
     const [csvData, setCsvData] = useState([]);
@@ -39,4 +39,4 @@ const CSVExportComponent = () => {
     );
 };
 
-export default CSVExportComponent;
+export default CSVExport;
