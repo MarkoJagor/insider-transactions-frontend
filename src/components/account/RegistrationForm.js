@@ -10,7 +10,7 @@ import AccountService from '../../services/AccountService';
 import AccountContext from '../../context/AccountContext';
 import Messages from '../util/Messages';
 
-const RegistrationFormComponent = () => {
+const RegistrationForm = () => {
 
     const { setUsername, toast } = useContext(AccountContext)
     const navigate = useNavigate()
@@ -98,4 +98,4 @@ const RegistrationFormComponent = () => {
     );
 };
 
-export default RegistrationFormComponent;
+export default RegistrationForm;

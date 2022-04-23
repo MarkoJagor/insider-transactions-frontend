@@ -6,7 +6,7 @@ import '../../styles/transactiondetails.css'
 import DataNotFound from '../util/DataNotFound';
 import Loading from '../util/Loading';
 
-const TransactionDetailsComponent = () => {
+const TransactionDetails = () => {
     const { transactionId } = useParams()
     const [transaction, setTransaction] = useState({})
     const [fetchError, setFetchError] = useState(null);
@@ -96,4 +96,4 @@ const TransactionDetailsComponent = () => {
     );
 };
 
-export default TransactionDetailsComponent;
+export default TransactionDetails;

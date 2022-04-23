@@ -10,7 +10,7 @@ import AccountContext from '../../context/AccountContext';
 import AccountService from '../../services/AccountService';
 import Messages from '../util/Messages';
 
-const LoginFormComponent = () => {
+const LoginForm = () => {
     const navigate = useNavigate()
     const { username, setUsername, setUserId, toast, wasLoggedOut, setWasLoggedOut } = useContext(AccountContext)
 
@@ -98,4 +98,4 @@ const LoginFormComponent = () => {
     );
 };
 
-export default LoginFormComponent;
+export default LoginForm;

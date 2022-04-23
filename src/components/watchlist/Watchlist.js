@@ -9,7 +9,7 @@ import WatchlistService from '../../services/WatchlistService';
 import AccountService from '../../services/AccountService';
 import Messages from '../util/Messages';
 
-const WatchlistComponent = () => {
+const Watchlist = () => {
     const { toast } = useContext(AccountContext)
     const navigate = useNavigate()
     const [source, setSource] = useState([])
@@ -97,4 +97,4 @@ const WatchlistComponent = () => {
     );
 }
 
-export default WatchlistComponent
+export default Watchlist

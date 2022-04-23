@@ -8,7 +8,7 @@ import { Column } from 'primereact/column';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 
-const TransactionsTableComponent = () => {
+const TransactionsTable = () => {
 
     const { transactions, tableData, setTableData, issuerValue, fromDate, toDate, keywordValue, setKeywordValue } = useContext(DataContext)
 
@@ -90,4 +90,4 @@ const TransactionsTableComponent = () => {
     );
 };
 
-export default TransactionsTableComponent;
+export default TransactionsTable;

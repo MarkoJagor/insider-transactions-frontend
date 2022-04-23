@@ -1,6 +1,6 @@
 import '../../styles/error.css'
 
-const DataNotFoundComponent = () => {
+const DataNotFound = () => {
     return (
         <main className='main'>
             <div id='notFound'>
@@ -16,4 +16,4 @@ const DataNotFoundComponent = () => {
     )
 };
 
-export default DataNotFoundComponent;
+export default DataNotFound;

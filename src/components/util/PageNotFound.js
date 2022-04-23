@@ -2,7 +2,7 @@ import { Button } from 'primereact/button';
 import { Link } from 'react-router-dom';
 import '../../styles/error.css'
 
-const NotFoundComponent = () => {
+const NotFound = () => {
     return (
         <main className='main'>
             <div id='notFound'>
@@ -21,4 +21,4 @@ const NotFoundComponent = () => {
     );
 };
 
-export default NotFoundComponent;
+export default NotFound;
